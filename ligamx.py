@@ -8,7 +8,8 @@ import lxml
 
 data = pd.read_html('https://www.espn.com.mx/futbol/posiciones/_/liga/mex.1',encoding='UTF-8')
 calendario=pd.read_csv('CALENDARIO.csv')
-
+local=calendario.LOCAL[0:153]
+visita=calendario.VISITA[0:153]
 
 tabla=data[1]
 equipo=data[0]
@@ -21,12 +22,7 @@ ataque=GF_promedio/goles_promedio_ligamx
 defensa=GC_promedio/goles_promedio_ligamx
 
 df=pd.DataFrame({'Juegos':tabla.J,'Ganados':tabla.G, 'Perdidos':tabla.P, 'Empates':tabla.E,'GF promedio':GF_promedio, 'GC promedio':GC_promedio,'Ataque':ataque,'Defensa':defensa})
+games=pd.DataFrame({'LOCAL':local.to_list(),'VISITA':visita.to_list()})
 
+print(games[:])
 print(df)
-local=calendario.LOCAL[0:153]
-visita=calendario.VISITA[0:153]
-
-i=range(0,153)
-print(local[i])
-print(visita[i])
-
