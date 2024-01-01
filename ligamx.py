@@ -1,3 +1,4 @@
+import random
 import pandas as pd
 import numpy as np
 from scipy.stats import poisson 
@@ -22,7 +23,14 @@ ataque=GF_promedio/goles_promedio_ligamx
 defensa=GC_promedio/goles_promedio_ligamx
 
 df=pd.DataFrame({'Juegos':tabla.J,'Ganados':tabla.G, 'Perdidos':tabla.P, 'Empates':tabla.E,'GF promedio':GF_promedio, 'GC promedio':GC_promedio,'Ataque':ataque,'Defensa':defensa})
-games=pd.DataFrame({'LOCAL':local.to_list(),'VISITA':visita.to_list()})
 
-print(games[:])
-print(df)
+games=pd.DataFrame({'LOCAL':local.to_list(),'goles local':np.random.randint(low = 0,high=7,size=153) ,'VISITA':visita.to_list(), 'goles visita':np.random.randint(low = 0,high=7,size=153)})
+
+G=(games['goles local']>games['goles visita'])
+P=(games['goles local']<games['goles visita'])
+E=(games['goles local']==games['goles visita'])
+games['G']=G.astype(int)
+games['P']=P.astype(int)
+games['E']=E.astype(int)
+
+print(games)
