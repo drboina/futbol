@@ -1,10 +1,4 @@
 import pandas as pd
-import numpy as np
-from scipy.stats import poisson 
-from matplotlib import pyplot as plt
-import seaborn as sns
-import re
-import lxml
 
 #Limpieza y tratamiento de datos
 equipos = pd.read_html("https://www.goal.com/es-mx/noticias/tabla-general-liga-mx/gotsl4uias0z1nyvu8pktnv1b",encoding='UTF-8')
