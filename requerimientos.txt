@@ -1,5 +1,0 @@
-pandas
-scipy
-matplotlib
-seaborn
-lxml
