@@ -34,30 +34,12 @@ print(tabla2)
 print('\nLiga mx')
 print(f'Goles promedio: {tabla.GF.sum()/tabla.J.sum()}')
 
+x=[0,5,7,9]
+y=[4,3,1,6]
 i=1
-while i<9: 
-    print(f'\nJuego {i}')
-    x=int(input('POSICION DEL LOCAL: '))
-    y=int(input('POSICION DEL VISITANTE: '))   
-    Gx=tabla2.loc[x]["Ataque"]*tabla2.loc[y]["Defensa"]*(tabla.GF.sum()/tabla.J.sum())
-    print(f'\n{tabla2.loc[x]["Club"]}: {Gx}')
-    Gy=tabla2.loc[y]["Ataque"]*tabla2.loc[x]["Defensa"]*(tabla.GF.sum()/tabla.J.sum())
-    print(f'{tabla2.loc[y]["Club"]}: {Gy}')
+while i<len(x): 
+    Gx=tabla2.loc[x[i]]["Ataque"]*tabla2.loc[y[i]]["Defensa"]*(tabla.GF.sum()/tabla.J.sum())
+    print(f'\n{tabla2.loc[x[i]]["Club"]}: {Gx}')
+    Gy=tabla2.loc[y[i]]["Ataque"]*tabla2.loc[x[i]]["Defensa"]*(tabla.GF.sum()/tabla.J.sum())
+    print(f'{tabla2.loc[y[i]]["Club"]}: {Gy}')
     i=i+1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
