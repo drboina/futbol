@@ -31,11 +31,15 @@ def juegos(jornada):
 
 jornada=5
 partidos = juegos(jornada)
+resultados = juegos(jornada-1)
+print(f"Resultados Jornada {jornada-1}")
+print(resultados)
+print("\n")
+print(f"Pronostico Jornada {jornada}")
 print(partidos)
 
-
-local=[7,13,5,14,8,1,0,6,15]
-visita = [4,10,12,17,16,2,11,3,9]
+local = [6,12,2,13,4,3,0,8,15]
+visita = [7,9,14,17,16,1,11,5,10]
 
 ataque_local = tabla.Ataque[local].to_list()
 defensa_local = tabla.Defensa[local].to_list()
@@ -49,6 +53,7 @@ pronostico = pd.DataFrame({"Local":tabla.Club[local].to_list(),"xG_local":xG_loc
 diferencia = round(pronostico.xG_local - pronostico.xG_visita)
 pronostico["diferencia"] = diferencia  
 pronostico.to_csv(f"pronostico_jormada_{jornada}.csv")
+resultados.to_csv(f"resultados_jornada_{jornada-1}.csv")
 print("\n",pronostico)
 
         
