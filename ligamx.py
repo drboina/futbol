@@ -29,7 +29,7 @@ def juegos(jornada):
     game = pd.read_html("https://mexico.as.com/resultados/futbol/mexico_apertura/calendario/", encoding='UTF-8')
     return game[jornada]
 
-jornada=5
+jornada=6
 partidos = juegos(jornada)
 resultados = juegos(jornada-1)
 print(f"Resultados Jornada {jornada-1}")
@@ -38,8 +38,8 @@ print("\n")
 print(f"Pronostico Jornada {jornada}")
 print(partidos)
 
-local = [6,12,2,13,4,3,0,8,15]
-visita = [7,9,14,17,16,1,11,5,10]
+local = [9,7, 16, 1, 10, 2, 11,15, 14]
+visita = [17, 13, 12, 6, 8, 3, 5, 0,4]
 
 ataque_local = tabla.Ataque[local].to_list()
 defensa_local = tabla.Defensa[local].to_list()
