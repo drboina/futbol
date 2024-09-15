@@ -1,9 +1,10 @@
-,Local,xG_local,xG_visita,Visita
-0,Atlético San Luis,0.36904761904761907,2.306547619047619,Cruz Azul
-1,América,0.8611111111111112,1.9331065759637187,Atlas
-2,Pachuca,0.26360544217687076,1.7397959183673473,Toluca
-3,Querétaro,0.19770408163265307,2.609693877551021,Tigres
-4,Pumas,1.7397959183673468,1.3180272108843538,Puebla
-5,Chivas,2.4603174603174605,0.6150793650793651,León
-6,Mazatlán,0.6326530612244898,1.8075801749271139,Necaxa
-7,Rayados,2.30466472303207,1.054421768707483,Juárez
+,Equipo local,Resultado,Equipo visitante
+0,Xolos,3 - 1,Santos Laguna
+1,Pachuca,M 19:00,Toluca
+2,Atlético San Luis,M 19:00,Cruz Azul
+3,América,M 19:00,Atlas
+4,Gallos Blancos,M 21:00,Tigres
+5,Pumas,M 21:05,Puebla
+6,Chivas,X 19:05,León FC
+7,Mazatlán Fútbol Club,X 20:00,Necaxa
+8,Rayados,X 21:00,Bravos

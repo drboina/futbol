@@ -21,7 +21,7 @@ def juegos(jornada):
     return game[jornada]
 
 partidos = juegos(jornada)
-resultados = juegos(jornada-1)
+resultados = juegos(jornada)
 
 def promedio_goles():
     promedio = tabla.GF.sum()/tabla.J.sum()
@@ -37,10 +37,10 @@ def juegos(jornada):
     return game[jornada]
 
 partidos = juegos(jornada)
-resultados = juegos(jornada-1)
+resultados = juegos(jornada)
 
-local = [4,7,11,14,17,10,6,12,5]
-visita = [13,11,3,2,0,8,15,9,16]
+local = [4,14,7,11,17,10,6,12,5]
+visita = [13,2,1,3,0,8,15,9,16]
 
 def xG(local,visita):
     ataque_local = tabla.Ataque[local].to_list()
@@ -56,7 +56,7 @@ xG_visita = multiplicar_elementos(ataque_visita, defensa_local)
 
 pronostico = pd.DataFrame({"Local":tabla.Club[local].to_list(),"xG_local":xG_local,"xG_visita":xG_visita,"Visita":tabla.Club[visita].to_list()})
 pronostico.to_csv(f"pronostico_jormada_{jornada}.csv")
-resultados.to_csv(f"resultados_jornada_{jornada-1}.csv")
+resultados.to_csv(f"resultados_jornada_{jornada}.csv")
 print(f'\n{tabla}\n')
 print("\n",resultados)
 print("\n",pronostico)
