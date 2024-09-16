@@ -1,10 +1,10 @@
-,Equipo local,Resultado,Equipo visitante
-0,Xolos,3 - 1,Santos Laguna
-1,Pachuca,M 19:00,Toluca
-2,Atlético San Luis,M 19:00,Cruz Azul
-3,América,M 19:00,Atlas
-4,Gallos Blancos,M 21:00,Tigres
-5,Pumas,M 21:05,Puebla
-6,Chivas,X 19:05,León FC
-7,Mazatlán Fútbol Club,X 20:00,Necaxa
-8,Rayados,X 21:00,Bravos
+,Equipo Local,xG_local,xG_visita,Equipo Visita
+0,Xolos,3.3,0.8999999999999999,Santos Laguna
+1,Pachuca,0.44999999999999996,1.1999999999999997,Toluca
+2,Atlético San Luis,0.6749999999999999,1.0125,Cruz Azul
+3,América,0.39999999999999997,0.5999999999999999,Atlas
+4,Gallos Blancos,0.049999999999999996,1.2,Tigres
+5,Pumas,1.96,1.1199999999999997,Puebla
+6,Chivas,1.4000000000000001,0.0,León FC
+7,Mazatlán Fútbol Club,0.6,1.3499999999999999,Necaxa
+8,Rayados,0.8999999999999999,1.7500000000000002,Bravos
