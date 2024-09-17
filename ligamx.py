@@ -29,6 +29,9 @@ def xG(equipo_local, equipo_visita):
     def multiplicar_elementos(lista1, lista2, prom):
         return [lista1[i] * lista2[i] * prom for i in range(len(lista1))]
     
+    def restar_elementos(lista1,lista2):
+        return [lista1[i] - lista2[i] for i in range(len(lista1))]
+    
     ataque_local = tabla.Ataque[equipo_local].to_list()
     defensa_local = tabla.Defensa[equipo_local].to_list()
     ataque_visita = tabla.Ataque[equipo_visita].to_list()
@@ -36,12 +39,14 @@ def xG(equipo_local, equipo_visita):
 
     xG_local = multiplicar_elementos(ataque_local, defensa_visita, prom)
     xG_visita = multiplicar_elementos(ataque_visita, defensa_local, prom)
-    return [xG_local, xG_visita]
+    dif = restar_elementos(xG_local,xG_visita)
+    return xG_local, xG_visita, dif
 
-[xG_local, xG_visita] = xG(equipo_local, equipo_visita)
-pronostico = pd.DataFrame({"Equipo Local":tabla.Equipo[equipo_local].to_list(),"xG_local":xG_local,"xG_visita":xG_visita,"Equipo Visita":tabla.Equipo[equipo_visita].to_list()})
+xG_local, xG_visita, dif = xG(equipo_local, equipo_visita)
+
+pronostico = pd.DataFrame({"Equipo Local":tabla.Equipo[equipo_local].to_list(),"xG_local":xG_local,"xG_visita":xG_visita,"Equipo Visita":tabla.Equipo[equipo_visita].to_list(), 'dif': dif})
 def save(tabla, pronostico, partidos, jornada):
-    pronostico.to_csv(f"pronostico_jormada_{jornada}.csv")
+    pronostico.to_csv(f"pronostico_jornada_{jornada}.csv")
     partidos.to_csv(f"partidos_jornada_{jornada}.csv")
     print("\n",tabla.sort_values('Pts.', ascending=False).to_string(index=False))
     print("\n",partidos.to_string(index=False))
