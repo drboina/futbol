@@ -1,6 +1,6 @@
 import pandas as pd
 
-jornada = 7
+jornada = 9
 def clean_tabla():
     tabla = pd.read_html("https://mexico.as.com/resultados/futbol/mexico_apertura/clasificacion/", encoding='UTF-8')
     tabla = tabla[1]
